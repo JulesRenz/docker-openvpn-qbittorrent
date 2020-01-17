@@ -16,6 +16,7 @@ Some of its feaures are:
   When the VPN connection goes down, so does the docker-container. The provided `docker-compose` setup takes care, that the container is restarted.
 
 ## Disclaimer
+
 This is free software, you are welcome to use it in any way you whish. It comes with no warranties whatsoever, I'm in no way liable if you do nasty things with it and get caught anyways. You shouldn't trust random software on the internet anyhow. I appreciate all contribution to this repository and hope to give you something usefull.
 
 ## Using this docker-image
@@ -36,6 +37,7 @@ The general procedure is this:
     up /etc/openvpn/client.up
     down /etc/openvpn/client.down
     ```
+
     They are needed to provide the auto restart and DNS functionality as well as make your VPN credentials accessible to the OpenVPN client inside the container.
 5) generate a `vpn.env` file, that holds your VPN credentials like this:
 
@@ -64,13 +66,20 @@ The general procedure is this:
 
 7) build and run the docker image:
 
-    - build and run
+- You can either trust me and use the Docker-image from DockerHub, it is build directly from this repositiry
 
         ``` bash
             docker-compose build && docker-compose up
         ```
+- Or you can build it yourself
 
-    - check that the container starts up and connects correctly
+        ```
+        docker build -t julesrenz/openvpn-qbittorrent .
+        docker-compose up
+        ```
+        Should use your locally built image.
+
+- Anyhow, afterwards, check that the container starts up and connects correctly
 
         ```bash
         docker-logs -f qbittorrent-vpn
@@ -78,9 +87,9 @@ The general procedure is this:
 
         It should tell you `Initialization Sequence Completed` after a couple of seconds
 
-8) Access the webinterface. Open `http://localhost:8080` (or another port if you have changed the default) in your browser. Login with admin/adminadmin and enjoy
+1) Access the webinterface. Open `http://localhost:8080` (or another port if you have changed the default) in your browser. Login with admin/adminadmin and enjoy
 
-9) Perform these steps for optimal peace of mind:
+2) Perform these steps for optimal peace of mind:
 
 - change the password of the webinterface
 - test with a well known torrent. e.g. ubuntu linux

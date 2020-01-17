@@ -2,10 +2,8 @@ version: '3'
 
 services:
     openvpn-qbittorrent:
-        build:
-            dockerfile: ./Dockerfile
-            context: ./
         container_name: openvpn-qbittorrent
+        image: julesrenz/openvpn-qbittorrent
         privileged: true
         restart: unless-stopped
         environment:
