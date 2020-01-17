@@ -1,0 +1,4 @@
+vpn.env
+.DS_Store
+config/qBittorrent/data/
+config/qBittorrent/config/rss/storage.lock

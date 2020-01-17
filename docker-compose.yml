@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+    openvpn-qbittorrent:
+        build:
+            dockerfile: ./Dockerfile
+            context: ./
+        container_name: openvpn-qbittorrent
+        privileged: true
+        restart: unless-stopped
+        environment:
+          - LOCAL_SUBNET=192.168.123.0/30
+          - VPN_SERVER_IP=95.211.174.168
+          - VPN_PROTO=tcp
+          - WEBINTERFACE_PORT=8080
+        env_file: vpn.env # contains VPN_USERNAME and VPN_PASSWORD
+        ports:
+            - 127.0.0.1:8080:8080 #Web Interface
+            - 8999:8999
+            - 8999:8999/udp
+        volumes: 
+            - ./config/openvpn/example-vpn.ovpn:/config/openvpn/profile.ovpn:ro
+            - ./downloads/:/downloads/:rw
+            - ./config/qBittorrent/:/config/qBittorrent/:rw
+
+networks:
+    default:
+        ipam:
+            config:
+                - subnet: 192.168.123.0/30

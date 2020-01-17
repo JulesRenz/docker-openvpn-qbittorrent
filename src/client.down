@@ -1,0 +1,4 @@
+#!/bin/sh
+
+#kill container
+pkill -15 sleep
