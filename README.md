@@ -82,7 +82,7 @@ You can either pull the image from Dockerhub (it is built directly from this rep
 - Anyhow, afterwards, check that the container starts up and connects correctly
 
     ```bash
-    docker-logs -f qbittorrent-vpn
+    docker logs -f openvpn-qbittorrent
     ```
 
     It should tell you `Initialization Sequence Completed` after a couple of seconds
