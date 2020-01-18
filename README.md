@@ -1,13 +1,14 @@
+![Docker Cloud Automated build](https://img.shields.io/docker/cloud/automated/julesrenz/openvpn-qbittorrent)![Docker Cloud Build Status](https://img.shields.io/docker/cloud/build/julesrenz/openvpn-qbittorrent)
 
 # docker-openvpn-qbittorrent
 
-This project aims to provide a tightly encapsulated environment to run qBittorrent in. It runs in a docker-container with only one internet-facing network adapter: OpenVPN.
+This project aims to provide a tightly encapsulated environment to run qBittorrent in. It runs in a docker-container with only one internet-facing network adapter: OpenVPN. Focus is on encapsulation and very strict iptables rules
 
-Some of its feaures are:
+## Overview
 
 - qBittorrent Webinterface:
   This is where you interact with your bittorrent client.
-- very strict strict iptable rules:
+- very strict iptable rules:
   Only the VPN interface allows incoming and outgoing connections. This includes torrent traffic and DNS
   An exception to this is the qBittorrent webinterface, which shall be accessible to the docker host. A IP subnet in CIDR notation can be provided to allow traffic from and to this subnet on the webinterface port
 - DNS forced over VPN:
