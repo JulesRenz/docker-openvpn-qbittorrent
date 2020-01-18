@@ -1,7 +1,7 @@
 FROM ubuntu:19.10
 
 RUN apt update && \
-    apt install -y curl strace vim dnsutils openvpn iptables telnet software-properties-common && \
+    apt install -y openvpn iptables software-properties-common && \
     add-apt-repository ppa:qbittorrent-team/qbittorrent-stable && \
     apt update && \
     apt install -y qbittorrent-nox
