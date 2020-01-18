@@ -69,23 +69,23 @@ You can either pull the image from Dockerhub (it is built directly from this rep
 
 - So, you trust me (you shouldn't) and want to pull the image?
 
-        ``` bash
-            docker-compose -f docker-compose.pull.yml up
-        ```
+    ``` bash
+    docker-compose -f docker-compose.pull.yml up
+    ```
+
 - Or you can build it yourself
 
-        ```
-        docker-compose -f docker-compose.pull.yml up
-        ```
-        Should use your locally built image.
+    ```bash
+    docker-compose -f docker-compose.pull.yml up
+    ```
 
 - Anyhow, afterwards, check that the container starts up and connects correctly
 
-        ```bash
-        docker-logs -f qbittorrent-vpn
-        ```
+    ```bash
+    docker-logs -f qbittorrent-vpn
+    ```
 
-        It should tell you `Initialization Sequence Completed` after a couple of seconds
+    It should tell you `Initialization Sequence Completed` after a couple of seconds
 
 1) Access the webinterface. Open `http://localhost:8080` (or another port if you have changed the default) in your browser. Login with admin/adminadmin and enjoy
 
