@@ -100,4 +100,4 @@ You can either pull the image from Dockerhub (it is built directly from this rep
 - Run container in non-privileged mode
 Currently the container is running in privileged mode, which is usually not a good idea but is currently needed to create the VPN adapter. 
 - HTTPS: The webinterface currently uses unencrypted HTTP. The attack surface is pretty limited though. The docker-network is occupied and the attacker would need to already have access to your machine.
-- Test on Windows. Since Docker for windows is more or less a thing now, I'm curious to see if it works there but haven't tried yet. This image was tested on Linux and MacOS
+- Test on Windows. Since Docker for windows is more or less a thing now, I'm curious to see if it works there but haven't tried yet. This image was tested on Linux and MacOS. --> Tested on windows with docker-toolbox. Does not work out of the box.
