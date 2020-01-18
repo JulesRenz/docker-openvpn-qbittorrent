@@ -65,17 +65,17 @@ The general procedure is this:
         - Here the local subnet is defined. A `30` subnet mask allows only two usable IP adresses, so it is "guaranteed", that the container gets one as well as the host and no other container can sneak into the same network and intercept your traffic there
 
 7) build and run the docker image:
+You can either pull the image from Dockerhub (it is built directly from this repository) or build it yourself. There are two `docker-compose` files, one for each scenario
 
-- You can either trust me and use the Docker-image from DockerHub, it is build directly from this repositiry
+- So, you trust me (you shouldn't) and want to pull the image?
 
         ``` bash
-            docker-compose build && docker-compose up
+            docker-compose -f docker-compose.pull.yml up
         ```
 - Or you can build it yourself
 
         ```
-        docker build -t julesrenz/openvpn-qbittorrent .
-        docker-compose up
+        docker-compose -f docker-compose.pull.yml up
         ```
         Should use your locally built image.
 

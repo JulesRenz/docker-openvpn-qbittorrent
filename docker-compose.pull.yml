@@ -7,7 +7,7 @@ services:
         privileged: true
         restart: unless-stopped
         environment:
-          - LOCAL_SUBNET=192.168.123.0/30
+          - LOCAL_SUBNET=192.168.124.0/30
           - VPN_SERVER_IP=95.211.174.168
           - VPN_PROTO=tcp
           - WEBINTERFACE_PORT=8080
@@ -25,4 +25,4 @@ networks:
     default:
         ipam:
             config:
-                - subnet: 192.168.123.0/30
+                - subnet: 192.168.124.0/30
